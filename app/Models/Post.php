@@ -22,4 +22,10 @@ class Post extends Model
         'content' => 'string',
         'is_feature' => 'boolean',
     ];
+
+    public function index(){
+        $posts = Post::orderBy('create_at', 'DESC')->get();
+        $data = ['posts' => $posts];
+        return view('admin.posts.index' , $data);
+    }
 }
