@@ -22,8 +22,11 @@ class AdminPostsController extends Controller
     }
 
     public function edit(Post $post)
-    {        
-        return view('admin.posts.edit');
+    {
+        $data=[
+            'post'=>$post,
+        ];
+        return view('admin.posts.edit',$data);
     }
 
     public function update(Request $request, $id)
