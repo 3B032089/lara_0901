@@ -35,8 +35,9 @@ class AdminPostsController extends Controller
         return view('admin.posts.index');
     }
 
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return view('admin.posts.index');
     }
 }
