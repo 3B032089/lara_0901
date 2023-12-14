@@ -28,4 +28,9 @@ class Post extends Model
         $data = ['posts' => $posts];
         return view('admin.posts.index' , $data);
     }
+
+    public function store(Request $request){
+        Post::create($request->all());
+        return redirect()->route('admin.posts.index');
+    }
 }

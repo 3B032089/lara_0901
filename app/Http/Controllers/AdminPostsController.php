@@ -21,8 +21,8 @@ class AdminPostsController extends Controller
         //
     }
 
-    public function edit($id)
-    {
+    public function edit(Post $post)
+    {        
         return view('admin.posts.edit');
     }
 
